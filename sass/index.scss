@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/*
+Theme Name: BristolFurs
+Theme URI: https://
+Author: Kim "beeps" Grey
+Author URI: https://beeps.website/
+Description: 
+Version: 1.0.0
+License: MIT
+License URI: https://mit-license.org/
+Text Domain: bristolfurs
+*/
+
+// 1. Settings
+// Where our configuration for everything lives.
+@use "settings";
+
+// 2. Helpers
+// Functions and mixins used elsewhere. Doesn't need to be referenced here,
+// they're loaded as-needed in the lower levels, but this is where they sit in
+// our hierarchy.
+
+// 3. Core styles
+// Basic 'global' styles, used everywhere.
+@use "core";
+
+// 4. Objects
+// Basic styled elements (for example, text headings) that can be used by
+// themselves or as part of larger components.
+@use "objects";
+
+// 5. Components
+// Reasonably complex, but still self-contained things (for example, a card UI).
+@use "components";
+
+// 6. Overrides
+// Special classes for when we actually want that thing to look a little bit
+// different, but just in that one place.
+@use "overrides";

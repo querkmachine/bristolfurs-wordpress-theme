@@ -1,0 +1,24 @@
+@use "../settings";
+
+@use "sass:map";
+
+@mixin mq($from: null, $to: null, $and: null) {
+	$mq: "";
+	@if $from {
+		$bp: map.get(settings.$bf-breakpoints, $from);
+		$mq: $mq + "(min-width: #{$bp}) ";
+	}
+	@if $from and $to {
+		$mq: $mq + "and ";
+	}
+	@if $to {
+		$bp: map.get(settings.$bf-breakpoints, $to) - 1px;
+		$mq: $mq + "(max-width: #{$bp}) ";
+	}
+	@if $and {
+		$mq: $mq + "and " + $and;
+	}
+	@media #{$mq} {
+		@content;
+	}
+}

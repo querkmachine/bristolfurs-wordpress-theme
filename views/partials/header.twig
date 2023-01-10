@@ -1,0 +1,17 @@
+<header class="bf-header">
+	<div class="bf-container bf-header__inner">
+		<a class="bf-header__logo" href="{{ site.link }}">
+			<img class="bf-header__logo-image"
+				alt="{{ site.name }}"
+				height="120"
+				src="{{ site.theme.link }}/images/logo.svg" />
+			<span class="bf-header__logo-text">{{ site.name }}</span>
+		</a>
+		<div class="bf-header__nav-toggle" hidden>
+			<button type="button">Menu</button>
+		</div>
+		<div class="bf-header__nav">
+			{% include 'partials/navigation.twig' %}
+		</div>
+	</div>
+</header>

@@ -1,0 +1,12 @@
+<nav class="bf-navigation" id="nav">
+	<ul class="bf-navigation__menu">
+		{% for item in primary_navigation.get_items %}
+			<li class="bf-navigation__item">
+				{% set itemCurrent = item.current ? ' aria-current-"page"' : '' %}
+				<a class="bf-navigation__link" href="{{ item.url }}" {{- itemCurrent }}>
+					{{- item.name -}}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

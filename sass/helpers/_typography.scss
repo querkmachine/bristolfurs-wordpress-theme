@@ -1,0 +1,42 @@
+@use "../settings";
+@use "../helpers/conversion";
+
+@use "sass:map";
+@use "sass:math";
+
+@function _calculate-line-height($line-height, $font-size) {
+	@if not
+		math.is-unitless($line-height) and
+		math.unit($line-height) ==
+		math.unit($font-size)
+	{
+		$line-height: math.div($line-height, $font-size);
+	}
+	@return $line-height;
+}
+
+@mixin font-size($key) {
+	$map: map.get(settings.$bf-font-sizes, $key);
+	$font-size: map.get($map, "size");
+	$font-size-rem: conversion.px-to-rem($font-size);
+	$line-height: _calculate-line-height(map.get($map, "leading"), $font-size);
+	font-size: $font-size-rem;
+	line-height: $line-height;
+}
+
+@mixin _typography-common {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin body-font {
+	@include _typography-common;
+	font-family: settings.$bf-body-font-stack;
+}
+
+@mixin heading-font {
+	@include _typography-common;
+	font-family: settings.$bf-heading-font-stack;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+}

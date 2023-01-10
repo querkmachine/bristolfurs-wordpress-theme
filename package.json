@@ -1,0 +1,28 @@
+{
+	"name": "bristolfurs-wordpress-theme",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "npm-run-all -p serve:*",
+		"build": "npm-run-all -p build:*",
+		"build:sass": "npm run sass -- --style compressed",
+		"sass": "sass sass/index.scss style.css",
+		"serve:sass": "npm run sass -- --watch --style expanded --error-css",
+		"lint": "npx prettier --write .",
+		"prepare": "husky install"
+	},
+	"author": "Kim 'beeps' Grey <hi@berly.kim>",
+	"license": "MIT",
+	"devDependencies": {
+		"@prettier/plugin-php": "^0.19.2",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.1.0",
+		"prettier": "^2.8.2",
+		"prettier-plugin-twig-melody": "^0.4.6",
+		"sass": "^1.57.1"
+	},
+	"lint-staged": {
+		"**/*.{twig,js,php,scss}": "prettier --write ."
+	}
+}

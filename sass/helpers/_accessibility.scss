@@ -1,0 +1,22 @@
+@use "colors";
+
+@mixin focus-ring {
+	color: colors.get-color("focus-text");
+	background-color: colors.get-color("focus");
+	text-decoration: none;
+	box-shadow: 0 -2px colors.get-color("focus"),
+		0 4px colors.get-color("focus-text");
+	box-decoration-break: clone;
+	outline: none;
+}
+
+@mixin visually-hidden($important: false) {
+	position: absolute if($important, !important, null);
+	inline-size: 1px if($important, !important, null);
+	block-size: 1px if($important, !important, null);
+	margin: -1px if($important, !important, null);
+	padding: 0 if($important, !important, null);
+	border: 0 if($important, !important, null);
+	overflow: hidden if($important, !important, null);
+	clip: rect(0 0 0 0) if($important, !important, null);
+}

@@ -1,0 +1,16 @@
+@use "../helpers/typography";
+@use "../helpers/spacing";
+
+.bf-skiplink {
+	@include typography.body-font;
+	@include typography.font-size("body-s");
+	display: block;
+	padding: spacing.spacing(2);
+	position: absolute;
+	top: -9999em;
+	left: -9999em;
+	font-weight: bold;
+	&:focus {
+		position: static;
+	}
+}

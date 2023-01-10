@@ -1,0 +1,66 @@
+{%- set webfontUrl =
+	'https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&family=Inter:wght@400;700&display=swap'
+-%}
+<!DOCTYPE html>
+<html class="bf-template" {{ site.language_attributes }}>
+	<head>
+		{# Technical metadata #}
+		<meta charset="{{ site.charset }}" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+		{# Webfont preloading #}
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="style" href="{{ webfontUrl }}" />
+
+		{# Stylesheets #}
+		<link rel="stylesheet"
+			href="{{ webfontUrl }}"
+			media="print"
+			onload="this.media='all'" />
+		<noscript>
+			<link rel="stylesheet" href="{{ webfontUrl }}" />
+		</noscript>
+		<link rel="stylesheet" href="{{ site.theme.link }}/style.css" />
+
+		{# Content metadata #}
+		<meta name="description" content="{{ site.description }}" />
+		<link rel="author" href="{{ site.theme.link }}/humans.txt" />
+		<link rel="me" href="https://twitter.com/bristolfurs" />
+
+		{# Let WordPress do everything else it wants to do #}
+		{{ function('wp_head') }}
+	</head>
+	<body class="bf-template__body {{ body_class }}">
+		{% block beforeHeader %}
+			<a class="bf-skiplink" href="#content">Skip to content</a>
+			<a class="bf-skiplink" href="#nav">Skip to navigation</a>
+		{% endblock %}
+		{% block header %}
+			{% include 'partials/header.twig' %}
+		{% endblock %}
+		{% block afteHeader %}
+
+		{% endblock %}
+
+		<main id="content">
+			{% block main %}
+
+			{% endblock %}
+		</main>
+
+		{% block beforeFooter %}
+
+		{% endblock %}
+		{% block footer %}
+			<footer></footer>
+		{% endblock %}
+		{% block afterFooter %}
+
+		{% endblock %}
+
+		{# Let WordPress do everything else it wants to #}
+		{{ function('wp_footer') }}
+	</body>
+</html>

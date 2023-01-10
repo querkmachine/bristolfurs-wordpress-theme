@@ -1,0 +1,24 @@
+@use "../settings";
+
+@use "../helpers/colors";
+@use "../helpers/typography";
+
+* {
+	box-sizing: border-box;
+	&::before,
+	&::after {
+		box-sizing: inherit;
+	}
+}
+
+.bf-template {
+	color: colors.get-color("text");
+	background-color: colors.get-color("page-background");
+	text-size-adjust: 100%;
+	&__body {
+		@include typography.body-font;
+		@include typography.font-size("body");
+		margin: 0;
+		background-color: transparent;
+	}
+}

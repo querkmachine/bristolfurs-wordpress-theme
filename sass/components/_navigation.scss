@@ -1,0 +1,39 @@
+@use "../helpers/colors";
+@use "../helpers/media-queries";
+@use "../helpers/spacing";
+@use "../helpers/typography";
+
+.bf-navigation {
+	&__menu {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		@include media-queries.mq($from: beta) {
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+	}
+	&__item {
+	}
+	&__link {
+		display: block;
+		padding: spacing.spacing(2) spacing.spacing(3) spacing.spacing(2)
+			spacing.spacing(2);
+		border-width: 0 0 0 spacing.spacing(1);
+		border-style: solid;
+		border-color: transparent;
+		color: colors.get-color("header-text");
+		text-decoration: none;
+		@include media-queries.mq($from: beta) {
+			padding: spacing.spacing(2) spacing.spacing(3) spacing.spacing(3)
+				spacing.spacing(3);
+			border-width: spacing.spacing(1) 0 0 0;
+		}
+		&:hover,
+		&[aria-current] {
+			border-color: currentcolor;
+		}
+	}
+}

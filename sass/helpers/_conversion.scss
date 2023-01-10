@@ -1,0 +1,8 @@
+@use "../settings";
+
+@use "sass:math";
+
+@function px-to-rem($px) {
+	$root-px: 16px; // the default in most browsers
+	@return math.div($px, $root-px) * 1rem;
+}

@@ -1,0 +1,102 @@
+@use "sass:color";
+
+//****************************
+// MEDIA QUERIES
+//****************************
+
+// Breakpoints
+$bf-breakpoints: (
+	alpha: 420px,
+	beta: 600px,
+	gamma: 768px,
+	delta: 900px,
+);
+
+//****************************
+// TYPOGRAPHY
+//****************************
+
+// Font stacks
+$bf-body-font-stack: (Inter, sans-serif);
+$bf-heading-font-stack: ("Inter Tight", sans-serif);
+
+// Font sizes
+$bf-font-sizes: (
+	body-s: (
+		size: 16px,
+		leading: 18px,
+	),
+	body: (
+		size: 19px,
+		leading: 26px,
+	),
+	body-l: (
+		size: 23px,
+		leading: 32px,
+	),
+	heading-s: (
+		size: 27px,
+		leading: 30px,
+	),
+	heading-m: (
+		size: 33px,
+		leading: 38px,
+	),
+	heading-l: (
+		size: 40px,
+		leading: 44px,
+	),
+	heading-xl: (
+		size: 47px,
+		leading: 49px,
+	),
+);
+
+//****************************
+// LAYOUT
+//****************************
+
+// Page container width
+$bf-container-width: 960px;
+$bf-gutter: 32px;
+
+// Spacing scale
+$bf-spacing: (
+	0: 0px,
+	1: 4px,
+	2: 8px,
+	3: 12px,
+	4: 16px,
+	5: 24px,
+	6: 32px,
+	7: 40px,
+	8: 48px,
+	9: 64px,
+);
+
+//****************************
+// COLOURS
+//****************************
+
+// Colour palette
+$bf-color-red: #bc0031;
+$bf-color-blue: #083d77;
+$bf-color-orange: #ee964b;
+$bf-color-yellow: #f4d35e;
+$bf-color-beige: #ebebd3;
+$bf-color-black: #18020c;
+$bf-color-white: #fff;
+$bf-color-light-grey: #e6e6e6;
+
+// Semantic colour palette
+$bf-color-palette: (
+	page-background: $bf-color-white,
+	text: $bf-color-black,
+	link: $bf-color-blue,
+	link-hover: color.scale($bf-color-blue, $lightness: -30%),
+	focus: $bf-color-yellow,
+	focus-text: $bf-color-black,
+	header: color.scale($bf-color-white, $alpha: -10%),
+	header-text: $bf-color-black,
+	keyline: $bf-color-light-grey,
+);

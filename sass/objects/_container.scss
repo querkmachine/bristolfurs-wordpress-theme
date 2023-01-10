@@ -1,0 +1,15 @@
+@use "../settings";
+@use "../helpers/conversion";
+
+@use "sass:math";
+
+.bf-container {
+	$outside-gutter: math.div(settings.$bf-gutter, 2);
+	$width: settings.$bf-container-width + settings.$bf-gutter;
+	width: 100%;
+	max-width: conversion.px-to-rem($width);
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: conversion.px-to-rem($outside-gutter);
+	padding-left: conversion.px-to-rem($outside-gutter);
+}
