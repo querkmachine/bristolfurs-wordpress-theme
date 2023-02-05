@@ -1,10 +1,10 @@
-:focus:focus {
-	color: #18020c;
-	background-color: #f4d35e;
-	text-decoration: none;
-	box-shadow: 0 -2px #f4d35e, 0 4px #18020c;
-	box-decoration-break: clone;
-	outline: none;
+:focus {
+	color: #18020c !important;
+	background-color: #f4d35e !important;
+	text-decoration: none !important;
+	box-shadow: 0 -2px #f4d35e, 0 4px #18020c !important;
+	box-decoration-break: clone !important;
+	outline: none !important;
 }
 
 * {
@@ -32,7 +32,7 @@
 
 .bf-container {
 	width: 100%;
-	max-width: 62rem;
+	max-width: 64.5rem;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1rem;
@@ -56,18 +56,29 @@
 	position: static;
 }
 
-.bf-header {
-	position: sticky;
-	top: 0;
-	color: #18020c;
-	background-color: rgba(255, 255, 255, 0.9);
-	backdrop-filter: blur(1em);
+.bf-button {
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	color: inherit;
+	background: none;
+	font: inherit;
+	line-height: inherit;
+	display: inline-block;
+	padding: 0.5rem 0.75rem;
+	color: #fff;
+	background-color: #bc0031;
+	text-decoration: none;
+	border-bottom: 2px solid #840022;
 }
-@media (min-width: 768px) {
-	.bf-header__inner {
-		display: flex;
-		justify-content: space-between;
-	}
+.bf-button:hover {
+	background-color: #840022;
+}
+
+.bf-header {
+	color: #18020c;
+	background-color: #fff;
+	border-bottom: 1px solid #e6e6e6;
 }
 .bf-header__logo {
 	-webkit-font-smoothing: antialiased;
@@ -79,8 +90,8 @@
 	line-height: 1.3913043478;
 	display: inline-flex;
 	align-items: center;
-	padding-top: 0.25rem;
-	padding-bottom: 0.25rem;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
 	color: inherit;
 	text-decoration: none;
 }
@@ -89,37 +100,109 @@
 	margin-right: 0.75rem;
 	margin-top: -0.25em;
 }
+.bf-navigation {
+	color: #fff;
+	background-color: #bc0031;
+}
+.bf-navigation__menu-toggle {
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	color: inherit;
+	background: none;
+	font: inherit;
+	line-height: inherit;
+	width: 100%;
+	padding: 0.75rem;
+	color: #fff;
+	background-color: #bc0031;
+	font-weight: bold;
+	text-align: left;
+	cursor: pointer;
+}
+.bf-navigation__menu-toggle::before {
+	content: "";
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-right: 0.5rem;
+	background-color: currentcolor;
+	clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bf-navigation__menu-toggle[aria-expanded="true"] {
+	background-color: #840022;
+}
+.bf-navigation__menu-toggle[aria-expanded="true"]::before {
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
 .bf-navigation__menu {
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
 	display: flex;
 	flex-direction: column;
 	list-style: none;
 }
-@media (min-width: 600px) {
+.bf-navigation__menu[hidden] {
+	display: none;
+}
+@media (min-width: 768px) {
 	.bf-navigation__menu {
 		flex-direction: row;
-		justify-content: flex-end;
 	}
 }
 .bf-navigation__link {
 	display: block;
-	padding: 0.5rem 0.75rem 0.5rem 0.5rem;
-	border-width: 0 0 0 0.25rem;
-	border-style: solid;
-	border-color: transparent;
-	color: #18020c;
+	padding: 0.75rem 0.75rem;
+	color: #fff;
 	text-decoration: none;
 }
-@media (min-width: 600px) {
-	.bf-navigation__link {
-		padding: 0.5rem 0.75rem 0.75rem 0.75rem;
-		border-width: 0.25rem 0 0 0;
-	}
+
+.bf-splash {
+	position: relative;
+	background-color: #18020c;
 }
-.bf-navigation__link:hover,
-.bf-navigation__link[aria-current] {
-	border-color: currentcolor;
+.bf-splash__image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	object-fit: cover;
+}
+.bf-splash__inner {
+	min-height: 40vh;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	position: relative;
+}
+.bf-splash__heading {
+	max-width: 20ch;
+	margin: 0;
+	line-height: 1.15;
+	letter-spacing: -0.05em;
+}
+.bf-splash__heading span {
+	color: #18020c;
+	background-color: #fff;
+	box-shadow: -0.75rem 0 0 #fff, 0.75rem 0 0 #fff;
+	box-decoration-break: clone;
+}
+.bf-splash__cta {
+	margin-top: 0.75rem;
+}
+
+.bf-\!-sr {
+	position: absolute !important;
+	inline-size: 1px !important;
+	block-size: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	border: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important;
 }
 
 /*

@@ -1,0 +1,17 @@
+@use "../helpers/colors";
+@use "../helpers/layout";
+@use "../helpers/reset";
+@use "../helpers/typography";
+
+.bf-button {
+	@include reset.button;
+	display: inline-block;
+	padding: layout.spacing(2) layout.spacing(3);
+	color: colors.get-color("button-text");
+	background-color: colors.get-color("button-background");
+	text-decoration: none;
+	border-bottom: 2px solid colors.get-color("button-hover");
+	&:hover {
+		background-color: colors.get-color("button-hover");
+	}
+}

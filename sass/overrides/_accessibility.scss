@@ -1,0 +1,5 @@
+@use "../helpers/accessibility";
+
+.bf-\!-sr {
+	@include accessibility.visually-hidden($important: true);
+}

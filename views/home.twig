@@ -1,7 +1,26 @@
 {% extends '_layout.twig' %}
 
+{% from 'components/splash.twig' import bfSplash %}
+
 {% block main %}
-	<p>
-		HOME!
-	</p>
+	{{
+		bfSplash({
+			image: '/wp-content/themes/bristolfurs/images/placeholder-splash.jpg',
+			alt: 'Placeholder image',
+			heading: 'Ullamco quis irure pariatur tempor ea in eiusmod'
+		})
+	}}
+	<div class="bf-container">
+		<p>
+			HOME! Probably more content here.
+		</p>
+		<p>
+			Amet consequat nostrud excepteur Lorem. Dolore amet laborum esse fugiat
+			laboris amet et exercitation cillum ullamco nulla fugiat eiusmod amet.
+			Incididunt id laborum ut elit eiusmod consequat eiusmod aliquip duis esse
+			ad elit. Eu cupidatat labore anim culpa dolor officia eiusmod. Nisi
+			pariatur eiusmod ipsum excepteur cupidatat et nostrud sunt ut. Dolore
+			commodo dolore aliquip aliqua pariatur elit.
+		</p>
+	</div>
 {% endblock %}

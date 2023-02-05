@@ -1,0 +1,17 @@
+{% from 'button.twig' import bfButton %}
+
+{% macro bfSplash(params) %}
+	<div class="bf-splash">
+		{%- if params.image %}
+			<img class="bf-splash__image"
+				alt="{{ params.alt }}"
+				src="{{ params.image }}" />
+		{%- endif %}
+		<div class="bf-container bf-splash__inner">
+			<h1 class="bf-heading-xl bf-splash__heading">
+				<span>{{- params.heading -}}</span>
+			</h1>
+			<a class="bf-button bf-splash__cta" href="#">Whoa cool a button</a>
+		</div>
+	</div>
+{% endmacro %}

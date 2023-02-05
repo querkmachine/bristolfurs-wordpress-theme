@@ -1,8 +1,0 @@
-@use "../settings";
-@use "../helpers/conversion";
-
-@use "sass:map";
-
-@function spacing($key) {
-	@return conversion.px-to-rem(map.get(settings.$bf-spacing, $key));
-}

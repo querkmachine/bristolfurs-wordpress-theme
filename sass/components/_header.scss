@@ -1,33 +1,30 @@
 @use "../helpers/colors";
+@use "../helpers/layout";
 @use "../helpers/media-queries";
-@use "../helpers/spacing";
 @use "../helpers/typography";
 
 .bf-header {
-	position: sticky;
-	top: 0;
+	// position: sticky;
+	// top: 0;
+	// z-index: 1000;
 	color: colors.get-color("header-text");
-	background-color: colors.get-color("header");
-	backdrop-filter: blur(1em);
+	background-color: colors.get-color("header-background");
+	border-bottom: 1px solid colors.get-color("keyline");
 	&__inner {
-		@include media-queries.mq($from: gamma) {
-			display: flex;
-			justify-content: space-between;
-		}
 	}
 	&__logo {
 		@include typography.heading-font;
 		@include typography.font-size(body-l);
 		display: inline-flex;
 		align-items: center;
-		padding-top: spacing.spacing(1);
-		padding-bottom: spacing.spacing(1);
+		padding-top: layout.spacing(3);
+		padding-bottom: layout.spacing(3);
 		color: inherit;
 		text-decoration: none;
 	}
 	&__logo-image {
 		max-height: 1.5em;
-		margin-right: spacing.spacing(3);
+		margin-right: layout.spacing(3);
 		margin-top: -0.25em;
 	}
 	&__logo-text {

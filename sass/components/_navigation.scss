@@ -1,39 +1,58 @@
 @use "../helpers/colors";
+@use "../helpers/layout";
 @use "../helpers/media-queries";
-@use "../helpers/spacing";
+@use "../helpers/reset";
 @use "../helpers/typography";
 
 .bf-navigation {
+	color: colors.get-color("nav-text");
+	background-color: colors.get-color("nav-background");
+	&__menu-toggle {
+		@include reset.button;
+		width: 100%;
+		padding: layout.spacing(3);
+		color: colors.get-color("page-background");
+		background-color: colors.get-color("link");
+		font-weight: bold;
+		text-align: left;
+		cursor: pointer;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 0.75em;
+			height: 0.75em;
+			margin-right: layout.spacing(2);
+			background-color: currentcolor;
+			clip-path: polygon(0 0, 100% 0, 50% 100%);
+		}
+		&[aria-expanded="true"] {
+			background-color: colors.get-color("link-hover");
+			&::before {
+				clip-path: polygon(50% 0, 100% 100%, 0 100%);
+			}
+		}
+	}
 	&__menu {
-		margin: 0;
+		margin-top: 0;
+		margin-bottom: 0;
 		padding: 0;
 		display: flex;
 		flex-direction: column;
+
 		list-style: none;
-		@include media-queries.mq($from: beta) {
+		&[hidden] {
+			display: none;
+		}
+		@include media-queries.mq($from: gamma) {
 			flex-direction: row;
-			justify-content: flex-end;
 		}
 	}
 	&__item {
 	}
 	&__link {
 		display: block;
-		padding: spacing.spacing(2) spacing.spacing(3) spacing.spacing(2)
-			spacing.spacing(2);
-		border-width: 0 0 0 spacing.spacing(1);
-		border-style: solid;
-		border-color: transparent;
-		color: colors.get-color("header-text");
+		padding: layout.spacing(3) layout.spacing(3);
+		color: colors.get-color("nav-text");
 		text-decoration: none;
-		@include media-queries.mq($from: beta) {
-			padding: spacing.spacing(2) spacing.spacing(3) spacing.spacing(3)
-				spacing.spacing(3);
-			border-width: spacing.spacing(1) 0 0 0;
-		}
-		&:hover,
-		&[aria-current] {
-			border-color: currentcolor;
-		}
 	}
 }

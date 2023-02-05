@@ -57,7 +57,7 @@ $bf-font-sizes: (
 //****************************
 
 // Page container width
-$bf-container-width: 960px;
+$bf-container-width: 1000px;
 $bf-gutter: 32px;
 
 // Spacing scale
@@ -72,6 +72,15 @@ $bf-spacing: (
 	7: 40px,
 	8: 48px,
 	9: 64px,
+);
+
+// Z-index layers
+$bf-layers: (
+	underlay: -1,
+	default: 1,
+	overlay: 1000,
+	modal-backdrop: 9998,
+	modal: 9999,
 );
 
 //****************************
@@ -92,11 +101,16 @@ $bf-color-light-grey: #e6e6e6;
 $bf-color-palette: (
 	page-background: $bf-color-white,
 	text: $bf-color-black,
-	link: $bf-color-blue,
-	link-hover: color.scale($bf-color-blue, $lightness: -30%),
+	link: $bf-color-red,
+	link-hover: color.scale($bf-color-red, $lightness: -30%),
 	focus: $bf-color-yellow,
 	focus-text: $bf-color-black,
-	header: color.scale($bf-color-white, $alpha: -10%),
+	header-background: $bf-color-white,
 	header-text: $bf-color-black,
+	nav-background: $bf-color-red,
+	nav-text: $bf-color-white,
 	keyline: $bf-color-light-grey,
+	button-text: $bf-color-white,
+	button-background: $bf-color-red,
+	button-hover: color.scale($bf-color-red, $lightness: -30%),
 );

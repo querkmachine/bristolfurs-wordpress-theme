@@ -1,6 +1,6 @@
 @use "../helpers/accessibility";
 
 // Double up to enforce specificity
-:focus:focus {
-	@include accessibility.focus-ring;
+:focus {
+	@include accessibility.focus-ring($important: true);
 }

@@ -1,5 +1,11 @@
 <nav class="bf-navigation" id="nav">
-	<ul class="bf-navigation__menu">
+	<button class="bf-navigation__menu-toggle"
+		id="nav-toggle"
+		hidden
+		type="button">
+		<span class="bf-!-sr">Toggle</span>Menu
+	</button>
+	<ul class="bf-container bf-navigation__menu" id="nav-menu">
 		{% for item in primary_navigation.get_items %}
 			<li class="bf-navigation__item">
 				{% set itemCurrent = item.current ? ' aria-current-"page"' : '' %}

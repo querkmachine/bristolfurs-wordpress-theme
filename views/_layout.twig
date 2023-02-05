@@ -39,6 +39,7 @@
 		{% endblock %}
 		{% block header %}
 			{% include 'partials/header.twig' %}
+			{% include 'partials/navigation.twig' %}
 		{% endblock %}
 		{% block afteHeader %}
 
@@ -59,6 +60,9 @@
 		{% block afterFooter %}
 
 		{% endblock %}
+
+		{# JavaScriptz #}
+		<script src="{{ site.theme.link }}/js/mobileNavigation.js"></script>
 
 		{# Let WordPress do everything else it wants to #}
 		{{ function('wp_footer') }}

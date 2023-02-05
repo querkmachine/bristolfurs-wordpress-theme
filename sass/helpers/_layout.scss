@@ -1,0 +1,18 @@
+@use "../settings";
+@use "../helpers/conversion";
+
+@use "sass:map";
+
+@function spacing($key) {
+	@if not map.has-key(settings.$bf-spacing, $key) {
+		@error "spacing.spacing: No key named `#{$key}` in `$bf-spacing`.";
+	}
+	@return conversion.px-to-rem(map.get(settings.$bf-spacing, $key));
+}
+
+@function layer($key) {
+	@if not map.has-key(settings.$bf-layers, $key) {
+		@error "spacing.layer: No key named `#{$key}` in `$bf-layers`.";
+	}
+	@return map.get(settings.$bf-layers, $key);
+}

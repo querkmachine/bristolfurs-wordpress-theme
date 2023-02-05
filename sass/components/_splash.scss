@@ -1,0 +1,41 @@
+@use "../helpers/colors";
+@use "../helpers/layout";
+@use "../helpers/typography";
+
+.bf-splash {
+	position: relative;
+	background-color: colors.get-color("text");
+	&__image {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		object-fit: cover;
+	}
+	&__inner {
+		min-height: 40vh;
+		padding-top: layout.spacing(8);
+		padding-bottom: layout.spacing(8);
+		position: relative;
+	}
+	&__heading {
+		max-width: 20ch;
+		margin: 0;
+		line-height: 1.15;
+		letter-spacing: -0.05em;
+		span {
+			color: colors.get-color("text");
+			background-color: colors.get-color("page-background");
+			box-shadow: (layout.spacing(3) * -1) 0 0
+					colors.get-color("page-background"),
+				layout.spacing(3) 0 0 colors.get-color("page-background");
+			box-decoration-break: clone;
+		}
+	}
+	&__cta {
+		margin-top: layout.spacing(3);
+	}
+}
